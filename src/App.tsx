@@ -4,7 +4,6 @@ import Discovery from "./pages/Discovery";
 import DiscoveryRedesign from "./pages/DiscoveryRedesign";
 import ClassSaas from "./pages/ClassSaas";
 import Circles from "./pages/Circles";
-import Connections from "./pages/Connections";
 import Profile from "./pages/Profile";
 import { useState } from "react";
 import { CONNECTIONS } from "./data/mockData";
