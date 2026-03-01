@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
 import Discovery from "./pages/Discovery";
+import DiscoveryRedesign from "./pages/DiscoveryRedesign";
 import ClassSaas from "./pages/ClassSaas";
 import Circles from "./pages/Circles";
 import Connections from "./pages/Connections";
@@ -20,10 +21,11 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Discovery />} />
+          <Route path="/" element={<DiscoveryRedesign initialView="discovery" />} />
+          <Route path="/discovery-old" element={<Discovery />} />
           <Route path="/class" element={<ClassSaas onAddConnection={addConnection} />} />
           <Route path="/circles" element={<Circles />} />
-          <Route path="/connections" element={<Connections connections={globalConnections} />} />
+          <Route path="/programs" element={<DiscoveryRedesign initialView="programs-list" />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Layout>

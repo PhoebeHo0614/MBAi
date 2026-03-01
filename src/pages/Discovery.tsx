@@ -129,10 +129,7 @@ export default function Discovery() {
                 <Button 
                     variant="ghost" 
                     className="w-full h-14 justify-start px-4 text-gray-700 hover:bg-gray-50 rounded-2xl flex items-center gap-3 text-base font-medium"
-                    onClick={() => {
-                        setShowActionSheet(false);
-                        if (selectedUser) handlePass(selectedUser.id);
-                    }}
+                    onClick={() => setShowActionSheet(false)}
                 >
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500">
                         <Frown className="w-5 h-5" />

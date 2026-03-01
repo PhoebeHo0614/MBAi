@@ -1,12 +1,12 @@
-import { Compass, Calendar, Users, MessageSquare, User } from "lucide-react";
+import { Compass, Calendar, Users, MessageSquare, User, Building2 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../../utils/cn";
 
 const navItems = [
   { icon: Compass, label: "发现", path: "/" },
+  { icon: Building2, label: "找项目", path: "/programs" },
   { icon: Calendar, label: "班级协作", path: "/class" },
   { icon: Users, label: "圈子", path: "/circles" },
-  { icon: MessageSquare, label: "关系", path: "/connections" },
   { icon: User, label: "我的", path: "/profile" },
 ];
 
