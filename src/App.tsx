@@ -23,7 +23,9 @@ function App() {
           <Route path="/" element={<DiscoveryRedesign initialView="discovery" />} />
           <Route path="/discovery-old" element={<Discovery />} />
           <Route path="/class" element={<ClassSaas onAddConnection={addConnection} />} />
+          <Route path="/class-demo" element={<ClassSaas onAddConnection={addConnection} />} />
           <Route path="/circles" element={<Circles />} />
+          <Route path="/circles-demo" element={<Circles />} />
           <Route path="/programs" element={<DiscoveryRedesign initialView="programs-list" />} />
           <Route path="/certification-demo" element={<DiscoveryRedesign initialView="certification" />} />
           <Route path="/profile" element={<Profile />} />
