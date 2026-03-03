@@ -1514,19 +1514,24 @@ function MessageCenterView({ onBack, onChatClick, onNotificationClick, activeTab
   );
 }
 
-export default function DiscoveryRedesign({ initialView = 'discovery' }: { initialView?: 'discovery' | 'programs-list' }) {
-  const [currentView, setCurrentView] = useState<'discovery' | 'agent-chat' | 'circle-detail' | 'message-center' | 'notification-detail' | 'programs-list' | 'program-detail' | 'program-compare'>(initialView);
+export default function DiscoveryRedesign({ initialView = 'discovery' }: { initialView?: 'discovery' | 'programs-list' | 'certification' }) {
+  const [currentView, setCurrentView] = useState<'discovery' | 'agent-chat' | 'circle-detail' | 'message-center' | 'notification-detail' | 'programs-list' | 'program-detail' | 'program-compare'>(
+    initialView === 'certification' ? 'discovery' : initialView
+  );
   const [returnView, setReturnView] = useState<'discovery' | 'message-center' | 'programs-list'>('discovery');
   const [messageTab, setMessageTab] = useState<'messages' | 'notifications'>('messages');
-  const [showCertification, setShowCertification] = useState(false);
+  const [showCertification, setShowCertification] = useState(initialView === 'certification');
   const [showActionSheet, setShowActionSheet] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<any>(null);
+  const [selectedUser, setSelectedUser] = useState<any>(initialView === 'certification' ? MOCK_USERS[0] : null);
   const [activeNotice, setActiveNotice] = useState<any>(null);
   const [activeProgram, setActiveProgram] = useState<any>(null);
   const [compareList, setCompareList] = useState<any[]>([]);
 
   useEffect(() => {
-    if (initialView) {
+    if (initialView === 'certification') {
+      setShowCertification(true);
+      setSelectedUser(MOCK_USERS[0]);
+    } else if (initialView) {
       setCurrentView(initialView);
     }
   }, [initialView]);
